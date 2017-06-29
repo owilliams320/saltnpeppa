@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="/jquery-1.11.3.min.js" type="text/javascript"></script>
+        
+        <link rel="stylesheet" href="/materialize/css/materialize.min.css" >
+        <script src="/materialize/js/materialize.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h1>Dashboard</h1>
+        <a href="/signout">signout</a>
+
+        <% for (var i=0; i<messages.length; i++) {%>
+            <div class="flash"><%=messages[i]%></div>
+        <% } %>
+        
+        <h2>Notification List</h2><a href="/notifications">create notification</a>
+
+        <ul class="collection">
+            <% for(var i=0; i<notifications.length; i++) {%>
+                <li class="collection-item">
+                    <span class="title"><%= notifications[i].title %>(<a href="/publisher/publish/<%=notifications[i].id%>/allGCM">send to all</a>)</span>
+                    <p><%= notifications[i].body %><br /> endpoint: <%=notifications[i].endpoint%></p>
+                     <p><%= notifications[i]._id %></p>
+                    <span><%= notifications[i].created %></span>
+                </li>
+            <% } %> 
+        </ul>
+
+        <br /><br />
+
+        <h2>Subscriptions List</h2>
+
+        <ul class="collection">
+            <% for(var i=0; i<subscribers.length; i++) {%>
+                <li class="collection-item">
+                    <span class="title"><%= subscribers[i].subscriptionId %></span>
+                    <p>
+                        notifications: <%=subscribers[i].notifications.length %>
+                    </p>
+                    <span>created: <%=subscribers[i].created %></span>
+                </li>
+            <% } %> 
+        </ul>
+    </body>
+</html>
