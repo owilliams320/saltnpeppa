@@ -3,11 +3,11 @@ Salt-n-Peppa
 
 > A Node.js push notifications server for the open web
 
-this is a express.js based project that currently uses MongoDb for the datastore. Currently this project only supports Firebase Cloud Service (previously Google Cloud Service). 
+this is an express.js based project that currently uses MongoDb for the datastore. Currently this project only supports Firebase Cloud Messaging Service (previously Google Cloud Messaging Service). Apple, Windows, and Firefox support coming soon. 
 
 ## Installation
 
-after cloning this repository run install the dependencies 
+after cloning this repository install the dependencies 
 
 ```shell
  $ npm install
@@ -37,7 +37,7 @@ module.exports = {
 ## Start Server
   
 ```shell
-$ node server.js
+$ npm run start
 ```
 
 ## Getting Started
