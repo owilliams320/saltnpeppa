@@ -13,6 +13,11 @@ after cloning this repository run install the dependencies
  $ npm install
 ```
 
+## Prerequisites
+- MongoDb Installation
+- SSL Certificate
+- FireBase Cloud Messaging API Key
+
 ## Configuration
 
 Create a javascript file named `development.js` and save it to `config/env/`
@@ -29,8 +34,11 @@ module.exports = {
 };
 ```
 
-# Start Server
+## Start Server
   
 ```shell
 $ node server.js
 ```
+
+## Getting Started
+Once the service is up and running the administration can be reached at `https://localhost:8443/dashboard` and the subscription demo can be reached at `https://localhost:8443`.
